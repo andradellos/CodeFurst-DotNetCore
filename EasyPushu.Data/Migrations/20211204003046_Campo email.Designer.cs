@@ -4,14 +4,16 @@ using EasyPushu.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EasyPushu.Data.Migrations
 {
     [DbContext(typeof(BancoDadosContext))]
-    partial class BancoDadosContextModelSnapshot : ModelSnapshot
+    [Migration("20211204003046_Campo email")]
+    partial class Campoemail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,14 +38,6 @@ namespace EasyPushu.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8dd9ac15-cd00-42d4-a3b8-eb9e20825a04"),
-                            Email = "defalt@emai.com",
-                            Nome = "User Defalt"
-                        });
                 });
 #pragma warning restore 612, 618
         }

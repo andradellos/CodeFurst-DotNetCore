@@ -1,3 +1,4 @@
+using EasyPush.IoC;
 using EasyPushu.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,16 +29,11 @@ namespace EasyPush.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            string valor = Configuration.GetConnectionString("BdEasyPush");
-
-            string conString = Microsoft
-                               .Extensions
-                               .Configuration
-                               .ConfigurationExtensions
-                               .GetConnectionString(this.Configuration, "BdEasyPush");
-
 
             services.AddDbContext<BancoDadosContext>(x => x.UseSqlServer(Configuration.GetConnectionString("BdEasyPush")).EnableSensitiveDataLogging());
+
+            //Configuração para Injeção de dependências
+            NativeInjector.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,5 +8,6 @@ namespace EasyPush.Domain.Entities
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
+        public string Email { get; set; }
     }
 }
