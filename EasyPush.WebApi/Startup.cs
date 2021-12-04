@@ -28,14 +28,6 @@ namespace EasyPush.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            string valor = Configuration.GetConnectionString("BdEasyPush");
-
-            string conString = Microsoft
-                               .Extensions
-                               .Configuration
-                               .ConfigurationExtensions
-                               .GetConnectionString(this.Configuration, "BdEasyPush");
-
 
             services.AddDbContext<BancoDadosContext>(x => x.UseSqlServer(Configuration.GetConnectionString("BdEasyPush")).EnableSensitiveDataLogging());
         }

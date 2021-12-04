@@ -1,4 +1,5 @@
 ﻿using EasyPush.Domain.Entities;
+using EasyPushu.Data.Extensions;
 using EasyPushu.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,18 +14,19 @@ namespace EasyPushu.Data.Context
        : base(options) { }
 
         //"DBSets"
+        //Entity usa o nome dessa propriedades para dar nome a tabela criada
         public DbSet<User> User { get; set; }
 
-        /// <summary>
+      
         /// Estamos sobrescrevedo o método OnMedelCreating para que ele crie a tabela de acordo com o mapeamento que foi escrito na .Data.Mappings
-        /// </summary>
-        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MapTbUser());
 
+            //Setando valores iniciais para a base de dados
+            modelBuilder.SeedData();
+
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }
