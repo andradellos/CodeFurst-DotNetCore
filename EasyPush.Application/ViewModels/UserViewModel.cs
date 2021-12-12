@@ -1,12 +1,12 @@
-﻿using EasyPush.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EasyPush.Domain.Entities
+namespace EasyPush.Application.ViewModels
 {
-    public class User : EntityGenerics
-    {       
+    public class UserViewModel
+    {
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
     }

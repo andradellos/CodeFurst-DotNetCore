@@ -4,14 +4,16 @@ using EasyPushu.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EasyPushu.Data.Migrations
 {
     [DbContext(typeof(BancoDadosContext))]
-    partial class BancoDadosContextModelSnapshot : ModelSnapshot
+    [Migration("20211211204726_Common filds")]
+    partial class Commonfilds
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace EasyPushu.Data.Migrations
                         new
                         {
                             Id = new Guid("8dd9ac15-cd00-42d4-a3b8-eb9e20825a04"),
-                            DateCreated = new DateTime(2020, 12, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "defalt@emai.com",
                             IsDeleted = false,
                             Nome = "User Defalt"

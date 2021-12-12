@@ -23,8 +23,7 @@ namespace EasyPush.WebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            this.userService.teste();
-            return Ok("Deu certo!!");
+           return Ok(this.userService.Get());
         }
 
 

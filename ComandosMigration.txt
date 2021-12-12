@@ -1,0 +1,8 @@
+
+1 - Cria o arquivo de migration e apresenta no VS para possamos ver se está OK
+
+add-migration "Common filds"
+
+2 - Comanod para alterar a base de dados
+
+Update-database

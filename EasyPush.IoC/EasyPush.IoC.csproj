@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EasyPush.Application\EasyPush.Application.csproj" />
+    <ProjectReference Include="..\EasyPush.Domain\EasyPush.Domain.csproj" />
+    <ProjectReference Include="..\EasyPushu.Data\EasyPushu.Data.csproj" />
   </ItemGroup>
 
 </Project>

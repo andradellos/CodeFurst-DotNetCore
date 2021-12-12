@@ -30,6 +30,7 @@ namespace EasyPush.WebApi
         {
             services.AddControllers();
 
+            //Cofiguração para o EntityFrameWork
             services.AddDbContext<BancoDadosContext>(x => x.UseSqlServer(Configuration.GetConnectionString("BdEasyPush")).EnableSensitiveDataLogging());
 
             //Configuração para Injeção de dependências
